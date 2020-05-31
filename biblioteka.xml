@@ -1,14 +1,32 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/css" href="style.css" ?>
+<!DOCTYPE biblioteka [
+	<!ELEMENT biblioteka	(ksiazki, rezerwacje)>
+	<!ELEMENT ksiazki 		(ksiazka+)>
+	<!ELEMENT rezerwacje	(rezerwacja*)>
+	<!ELEMENT ksiazka		(tytul, autor, wydawnictwo, seria?)>
+	<!ATTLIST rezerwacja idkarty ID #REQUIRED>
+	<!ELEMENT rezerwacja	(imie, nazwisko, tarezerwacja+)>
+	<!ELEMENT tarezerwacja	(tytul, data)>
+	<!ELEMENT data			(data_od, data_do)>
+	<!ELEMENT tytul			(#PCDATA)>
+	<!ELEMENT autor			(#PCDATA)>
+	<!ELEMENT wydawnictwo	(#PCDATA)>
+	<!ELEMENT imie			(#PCDATA)>
+	<!ELEMENT nazwisko		(#PCDATA)>
+	<!ELEMENT data_od		(#PCDATA)>
+	<!ELEMENT data_do		(#PCDATA)>
+]>
 <biblioteka>
 	<ksiazki>
 		<ksiazka sekcja="naukowe">
-			<tytul>Sztuczna Inteligencja, nieludzka, arcyludzka</tytul>
+			<tytul>Sztuczna Inteligencja nieludzka, arcyludzka</tytul>
 			<autor>Aleksandra Przegalińska</autor>
 			<wydawnictwo>ZNAK</wydawnictwo>
 		</ksiazka>
 
 		<ksiazka sekcja="literatura piękna">
-			<tytul>Cień wiatru</tytul>
+			<tytul>Cień wiatru</tytul>            
 			<autor>Carlos Ruiz Zafon</autor>
 			<wydawnictwo>Muza</wydawnictwo>
 		</ksiazka>
@@ -84,7 +102,7 @@
 
 		<rezerwacja idkarty="45678">
 			<imie>Janusz</imie>
-			</nazwisko>Jan</nazwisko>
+			<nazwisko>Jan</nazwisko>
 
 			<tarezerwacja>
 				<tytul>Cień wiatru</tytul>
@@ -105,7 +123,7 @@
 
 		<rezerwacja idkarty="13453">
 			<imie>Arkadia</imie>
-			</nazwisko>Ark</nazwisko>
+			<nazwisko>Ark</nazwisko>
 
 			<tarezerwacja>
 				<tytul>Sztuczna Inteligencja, nieludzka, arcyludzka</tytul>
@@ -119,7 +137,7 @@
 		<rezerwacja idkarty="45253">
 
 			<imie>Łucja</imie>
-			</nazwisko>Luc</nazwisko>
+			<nazwisko>Luc</nazwisko>
 			
 			<tarezerwacja>
 				<tytul>Śmierć na Nilu</tytul>
@@ -148,7 +166,7 @@
 
 		<rezerwacja idkarty="11112">
 			<imie>Geralt</imie>
-			</nazwisko>Ger</nazwisko>
+			<nazwisko>Ger</nazwisko>
 
 			<tarezerwacja>
 				<tytul>Miecz przeznaczenia</tytul>
@@ -177,7 +195,7 @@
 
 		<rezerwacja idkarty="66785">
 			<imie>Daniel</imie>
-			</nazwisko>Carax</nazwisko>
+			<nazwisko>Carax</nazwisko>
 
 			<tarezerwacja>
 				<tytul>Cień wiatru</tytul>
@@ -206,7 +224,7 @@
 
 		<rezerwacja idkarty="45678">
 			<imie>Amelia</imie>
-			</nazwisko>Ami</nazwisko>
+			<nazwisko>Ami</nazwisko>
 			
 			<tarezerwacja>
 				<tytul>Zanim umarłam</tytul>
