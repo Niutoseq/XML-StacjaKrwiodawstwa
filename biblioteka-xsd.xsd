@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:simpleType name="stringtype">
+        <xs:restriction base="xs:string"/>
+    </xs:simpleType>
+
+    <xs:simpleType name="datetype">
+        <xs:restriction base="xs:date"/>
+    </xs:simpleType>
+
+    <xs:simpleType name="idtype">
+        <xs:restriction base="xs:string"/>
+    </xs:simpleType>
+
+    <xs:element name="sekcja">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+            <xs:enumeration value="naukowe"/>
+            <xs:enumeration value="literatura piękna"/>
+            <xs:enumeration value="fantasy"/>
+            <xs:enumeration value="kryminal"/>
+            <xs:enumeration value="thriller psychologiczny"/>
+            <xs:enumeration value="młodzieżowe"/>
+            <xs:enumeration value="historyczne"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+
+
+    <xs:complexType name="ksiazkatype">
+        <xs:sequence>
+            <xs:element name="tytul" type="stringtype"/>
+            <xs:element name="autor" type="stringtype"/>
+            <xs:element name="wydawnictwo" type="stringtype"/>
+        </xs:sequence>
+        <xs:attribute name="sekcja" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="ksiazkitype">
+        <xs:sequence>
+            <xs:element name="ksiazka" type="ksiazkatype" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="datatype">
+        <xs:sequence>
+            <xs:element name="data_od" type="datetype"/>
+            <xs:element name="data_do" type="datetype"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="tarezerwacjatype">
+        <xs:sequence>
+            <xs:element name="data" type="datatype"/>
+        </xs:sequence>
+        <xs:attribute name="tytul"/>
+    </xs:complexType>
+
+    <xs:complexType name="rezerwacjatype">
+        <xs:sequence>
+            <xs:element name="imie" type="stringtype"/>
+            <xs:element name="nazwisko" type="stringtype"/>
+            <xs:element name="tarezerwacja" type="tarezerwacjatype" maxOccurs="3"/>
+        </xs:sequence>
+        <xs:attribute name="idkarty" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="rezerwacjetype">
+        <xs:sequence>
+            <xs:element name="rezerwacja" type="rezerwacjatype" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="bibliotekatype">
+        <xs:sequence>
+            <xs:element name="ksiazki" type="ksiazkitype" maxOccurs="1"/>
+            <xs:element name="rezerwacje" type="rezerwacjetype" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="biblioteka" type="bibliotekatype">
+        <xs:key name="idkey">
+            <xs:selector xpath="ksiazkatype"/>
+            <xs:field xpath="tytul"/>
+        </xs:key>
+        <xs:keyref name="idKeyRef" refer="idkey">
+            <xs:selector xpath="tarezerwacjatype"/>
+            <xs:field xpath="idref"/>
+        </xs:keyref>
+    </xs:element>
+
+
+    
+
+</xs:schema>
+

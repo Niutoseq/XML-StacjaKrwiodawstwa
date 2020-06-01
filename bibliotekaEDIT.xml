@@ -1,0 +1,232 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/css" href="style.css" ?>
+<!DOCTYPE biblioteka [
+	<!ELEMENT biblioteka	(ksiazki, rezerwacje)>
+	<!ELEMENT ksiazki 		(ksiazka+)>
+	<!ELEMENT rezerwacje	(rezerwacja*)>
+	<!ELEMENT ksiazka		(tytul, autor, wydawnictwo, seria?)>
+	<!ATTLIST rezerwacja 	idkarty ID #REQUIRED>
+	<!ELEMENT rezerwacja	(imie, nazwisko, tarezerwacja+)>
+	<!ELEMENT tarezerwacja	(tytul, data)>
+	<!ELEMENT data			(data_od, data_do)>
+	<!ELEMENT tytul			(#PCDATA)>
+	<!ELEMENT autor			(#PCDATA)>
+	<!ELEMENT wydawnictwo	(#PCDATA)>
+	<!ELEMENT imie			(#PCDATA)>
+	<!ELEMENT nazwisko		(#PCDATA)>
+	<!ELEMENT data_od		(#PCDATA)>
+	<!ELEMENT data_do		(#PCDATA)>
+]>
+<biblioteka>
+	<ksiazki>
+		<ksiazka sekcja="naukowe">
+			<tytul>Sztuczna Inteligencja nieludzka, arcyludzka</tytul>
+			<autor>Aleksandra Przegalińska</autor>
+			<wydawnictwo>ZNAK</wydawnictwo>
+		</ksiazka>
+
+		<ksiazka sekcja="literatura piękna">
+			<tytul>Cień wiatru</tytul>            
+			<autor>Carlos Ruiz Zafon</autor>
+			<wydawnictwo>Muza</wydawnictwo>
+		</ksiazka>
+
+		<ksiazka sekcja="literatura piękna">
+			<tytul>Była sobie rzeka</tytul>
+			<autor>Diane Setterfield</autor>
+			<wydawnictwo>ALBATROS</wydawnictwo>
+		</ksiazka>
+
+		<ksiazka sekcja="literatura piękna">
+			<tytul>Labirynt Aniołów</tytul>
+			<autor>Carlos Ruiz Zafon</autor>
+			<wydawnictwo>Muza</wydawnictwo>
+		</ksiazka>
+
+		<ksiazka sekcja="literatura piękna">
+			<tytul>Gra Anioła</tytul>
+			<autor>Carlos Ruiz Zafon</autor>
+			<wydawnictwo>Muza</wydawnictwo>
+		</ksiazka>
+
+		<ksiazka sekcja="kryminal">
+			<tytul>Śmierć na Nilu</tytul>
+			<autor>Agatha Christie</autor>
+			<wydawnictwo>Dolnośląskie</wydawnictwo>
+		</ksiazka>
+
+		<ksiazka sekcja="thriller psychologiczny">
+			<tytul>Bliźnięta z lodu</tytul>
+			<autor>S.K Tremayne</autor>
+			<wydawnictwo>Czarna owca</wydawnictwo>
+		</ksiazka>
+
+		<ksiazka sekcja="thriller psychologiczny">
+			<tytul>Zanim umarłam</tytul>
+			<autor>S.K Tremayne</autor>
+			<wydawnictwo>Czarna owca</wydawnictwo>
+		</ksiazka>
+
+		<ksiazka sekcja="fantasy">
+			<tytul>Ostatnie życzenie</tytul>
+			<autor>Andrzej Sapkowski</autor>
+			<wydawnictwo>superNOWA</wydawnictwo>
+		</ksiazka>
+
+		<ksiazka sekcja="fantasy">
+			<tytul>Czas pogardy</tytul>
+			<autor>Andrzej Sapkowski</autor>
+			<wydawnictwo>superNOWA</wydawnictwo>
+		</ksiazka>
+
+		<ksiazka sekcja="fantasy">
+			<tytul>Chrzest ognia</tytul>
+			<autor>Andrzej Sapkowski</autor>
+			<wydawnictwo>superNOWA</wydawnictwo>
+		</ksiazka>
+
+		<ksiazka sekcja="fantasy">
+			<tytul>Miecz Przeznaczenia</tytul>
+			<autor>Andrzej Sapkowski</autor>
+			<wydawnictwo>superNOWA</wydawnictwo>
+		</ksiazka>
+
+		<ksiazka sekcja="fantasy">
+			<tytul>Krew Elfów</tytul>
+			<autor>Andrzej Sapkowski</autor>
+			<wydawnictwo>superNOWA</wydawnictwo>
+		</ksiazka>
+	</ksiazki>
+
+	<rezerwacje>
+
+		<rezerwacja idkarty="45678">
+			<imie>Janusz</imie>
+			<nazwisko>Jan</nazwisko>
+
+			<tarezerwacja tytul="Cień wiatru">
+				<data>
+					<data_od>2020-08-20</data_od>
+					<data_do>2020-09-20</data_do>
+				</data>
+			</tarezerwacja>
+
+			<tarezerwacja tytul="Była sobie rzeka">
+				<data>
+					<data_od>2020-08-20</data_od>
+					<data_do>2020-09-20</data_do>
+				</data>
+			</tarezerwacja>
+		</rezerwacja>
+
+		<rezerwacja idkarty="13453">
+			<imie>Arkadia</imie>
+			<nazwisko>Ark</nazwisko>
+
+			<tarezerwacja tytul="Sztuczna Inteligencja, nieludzka, arcyludzka">
+				<data>
+					<data_od>2020-08-20</data_od>
+					<data_do>2020-09-20</data_do>
+				</data>
+			</tarezerwacja>
+		</rezerwacja>
+
+		<rezerwacja idkarty="45253">
+
+			<imie>Łucja</imie>
+			<nazwisko>Luc</nazwisko>
+			
+			<tarezerwacja tytul="Śmierć na Nilu">
+				<data>
+					<data_od>2020-10-25</data_od>
+					<data_do>2020-11-25</data_do>
+				</data>
+			</tarezerwacja>
+
+			<tarezerwacja tytul="Ostatnie życzenie">
+				<data>
+					<data_od>2020-06-25</data_od>
+					<data_do>2020-07-25</data_do>
+				</data>
+			</tarezerwacja>
+
+			<tarezerwacja tytul="Cień wiatru">
+				<data>
+					<data_od>2020-02-15</data_od>
+					<data_do>2020-03-15</data_do>
+				</data>
+			</tarezerwacja>
+		</rezerwacja>
+
+		<rezerwacja idkarty="11112">
+			<imie>Geralt</imie>
+			<nazwisko>Ger</nazwisko>
+
+			<tarezerwacja tytul="Miecz przeznaczenia">
+				<data>
+					<data_od>2020-02-02</data_od>
+					<data_do>2020-03-02</data_do>
+				</data>
+			</tarezerwacja>
+
+			<tarezerwacja tytul="Krew Elfów">
+				<data>
+					<data_od>2020-02-02</data_od>
+					<data_do>2020-03-02</data_do>
+				</data>
+			</tarezerwacja>
+
+			<tarezerwacja tytul="Czas pogardy">
+				<data>
+					<data_od>2020-02-02</data_od>
+					<data_do>2020-03-02</data_do>
+				</data>
+			</tarezerwacja>
+		</rezerwacja>
+
+		<rezerwacja idkarty="66785">
+			<imie>Daniel</imie>
+			<nazwisko>Carax</nazwisko>
+
+			<tarezerwacja tytul="Cień wiatru">
+				<data>
+					<data_od>2020-05-06</data_od>
+					<data_do>2020-06-06</data_do>
+				</data>
+			</tarezerwacja>
+
+			<tarezerwacja tytul="Gra Anioła">
+				<data>
+					<data_od>2020-05-06</data_od>
+					<data_do>2020-06-06</data_do>
+				</data>
+			</tarezerwacja>
+
+			<tarezerwacja tytul="Więzień nieba">
+				<data>
+					<data_od>2020-05-06</data_od>
+					<data_do>2020-06-06</data_do>
+				</data>
+			</tarezerwacja>
+		</rezerwacja>
+
+		<rezerwacja idkarty="45678">
+			<imie>Amelia</imie>
+			<nazwisko>Ami</nazwisko>
+			
+			<tarezerwacja tytul="Zanim umarłam">
+				<data>
+					<data_od>2019-12-28</data_od>
+					<data_do>2020-01-28</data_do>
+				</data>
+			</tarezerwacja>
+
+			<tarezerwacja tytul="Bliźnięta z lodu">
+				<data>
+					<data_od>2019-12-28</data_od>
+					<data_do>2020-01-28</data_do>
+				</data>
+			</tarezerwacja>
+		</rezerwacja>
+	</rezerwacje>
+</biblioteka>
